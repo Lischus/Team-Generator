@@ -1,27 +1,47 @@
 function generateTeam(team) {
     function generateManagerCard(manager) {
-        return `<div class = "card">${manager.getName()}</div>`
+        return `<div class = "card">
+        <div class = "card-header">${manager.getName()}</div>
+        <div class = "card-role">${manager.getRole()}</div>
+        <div class = "card-ID">ID Number: ${manager.getID()}</div>
+        <div class = "card-email">Email Address: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></div>
+        <div class = "card-bottom">Office Number: ${manager.getOfficeNumber()}</div>
+        </div>`
     }
     function generateEngineerCard(engineer) {
-
+        return `<div class = "card">
+        <div class = "card-header">${engineer.getName()}</div>
+        <div class = "card-role">${engineer.getRole()}</div>
+        <div class = "card-ID">ID Number: ${engineer.getID()}</div>
+        <div class = "card-email">Email Address: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></div>
+        <div class = "card-bottom">Github: <a href="github.com/${engineer.getGithub()}" target='_blank'>${engineer.getGithub()}</a></div>
+        </div>`
     }
     function generateInternCard(intern) {
-
+        return `<div class = "card">
+        <div class = "card-header">${intern.getName()}</div>
+        <div class = "card-role">${intern.getRole()}</div>
+        <div class = "card-ID">ID Number: ${intern.getID()}</div>
+        <div class = "card-email">Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></div>
+        <div class = "card-bottom">School: ${intern.getSchool()}</div>
+        </div>`
     }
     const html = []
-    for(i = 0; i < team.length; i++) {
+    for (i = 0; i < team.length; i++) {
         if (team[i].getRole() === "Manager") {
-            generateManagerCard(team[i])
+            html.push(generateManagerCard(team[i]))
         } else if (team[i].getRole() === "Engineer") {
-            generateEngineerCard(team[i])
+            html.push(generateEngineerCard(team[i]))
         } else if (team[i].getRole() === "Intern") {
-            generateInternCard(team[i])
+            html.push(generateInternCard(team[i]))
         }
     }
 
-    return html
-}
+    const noCommas = html.join("");
 
+    return noCommas
+}
+// console.log(generateTeam())
 module.exports = team => {
     return `
     <!DOCTYPE html>
@@ -31,7 +51,7 @@ module.exports = team => {
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-        <title>Document</title>
+        <title>Your Team!</title>
     </head>
     <body>
         <div class="container-fluid">
