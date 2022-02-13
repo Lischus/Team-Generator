@@ -27,3 +27,4 @@ In order to test it you type 'node index.js' into your terminal and answer the q
 
 If you have any questions please email me at martinjcorr2@gmail.com, or follow me on my Github account github.com/Lischus to learn more!
 
+To learn more about this program <a href="https://drive.google.com/file/d/1-PzySFKdpmiet12AquIBCsS7yCEqxo6Y/view?usp=sharing">please watch this tutorial video!</a>
