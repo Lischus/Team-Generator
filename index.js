@@ -192,20 +192,9 @@ function menu() {
             })
     };
     function buildingOurTeam() {
-        // fs.writeFile(outputPath, template(teamMembers), "utf-8", err => {
-        //     err ? console.error(err) : console.log("Ya did good, kid.")
-        // })
-
-        // fs.writeFile("index.html", template(teamMembers))
-
         fs.writeFile(outputPath, template(teamMembers), err => {
-            err ? console.error(err) : console.log("Ya did good, kid.")
+            err ? console.error(err) : console.log("Team Generated!")
         })
-        console.log("Before the writeFile");
-        console.log(teamMembers);
-        // fs.writeFile('index.html', template(teamMembers), err => {
-        //     err ? console.error(err) : console.log("Ya did good, kid.")
-        // })
     };
     createManager();
 }

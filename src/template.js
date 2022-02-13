@@ -41,7 +41,6 @@ function generateTeam(team) {
 
     return noCommas
 }
-// console.log(generateTeam())
 module.exports = team => {
     return `
     <!DOCTYPE html>
